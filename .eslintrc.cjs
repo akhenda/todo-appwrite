@@ -4,6 +4,14 @@ module.exports = {
   extends: ['plugin:@hendacorp/reactful'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      parserOptions: {
+        project: 'tsconfig.json',
+      },
+    },
+  ],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     camelcase: 'off',

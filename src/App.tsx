@@ -1,6 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Notes from './pages/Notes';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import LoginRegister from './pages/LoginRegister';
+import Notes from './pages/Notes';
 
 function App() {
   return (
