@@ -1,0 +1,12 @@
+/dist
+/node_modules
+.eslintrc.js
+.eslintrc.cjs
+coverage
+/coverage
+.npmrc
+.github
+package.json
+api-extractor.json
+tsconfig.json
+jest.config.js
