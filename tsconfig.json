@@ -23,8 +23,9 @@
     "types": ["vite/client"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "src/*": ["src/*"]
+      "@/*": ["./src/*"],
+      "@src/*": ["./src/*"],
+      "src/*": ["./src/*"]
     }
   },
   "include": ["src"],
