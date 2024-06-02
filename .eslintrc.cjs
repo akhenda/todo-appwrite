@@ -4,6 +4,11 @@ module.exports = {
   extends: ['plugin:@hendacorp/reactful'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
+  },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
@@ -25,5 +30,6 @@ module.exports = {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': 'error',
     'n/no-unpublished-import': 'off',
+    '@shopify/jsx-no-hardcoded-content': 'off',
   },
 };

@@ -1,10 +1,10 @@
 module.exports = {
   bracketSpacing: true,
   singleQuote: true,
-  trailingComma: "all",
+  trailingComma: 'all',
   semi: true,
   tabWidth: 2,
-  printWidth: 100,
+  printWidth: 90,
   jsxBracketSameLine: false,
-  arrowParens: "always",
+  arrowParens: 'always',
 };
