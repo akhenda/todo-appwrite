@@ -1,19 +1,18 @@
 import { useEffect, useState } from 'react';
+import { Query } from 'appwrite';
 
-import { databases } from '@/appwrite/config';
-import { Note } from '@/appwrite/types';
-import { env } from '@/config';
+import db from '@/appwrite/databases';
+import { Note as TNote } from '@/appwrite/types';
+import Note from '@/components/Note';
+import NoteForm from '@/components/NoteForm';
 
 function Notes() {
-  const [notes, setNotes] = useState<Note[]>([]);
+  const [notes, setNotes] = useState<TNote[]>([]);
 
   const init = async () => {
-    const response = await databases.listDocuments(
-      env.VITE_APPWRITE_DATABASE_ID,
-      env.VITE_APPWRITE_COLLECTION_ID_NOTES,
-    );
+    const response = await db.notes.list([Query.orderDesc('$createdAt')]);
 
-    setNotes(response.documents as Note[]);
+    setNotes(response.documents as TNote[]);
   };
 
   useEffect(() => {
@@ -22,8 +21,17 @@ function Notes() {
 
   return (
     <>
+      <div className="header">
+        <h1>
+          <span role="img" aria-label="memo">
+            ✍🏾
+          </span>{' '}
+          My Todo List
+        </h1>
+      </div>
+      <NoteForm setNotes={setNotes} />
       {notes.map((note) => (
-        <div key={note.$id}>{note.body}</div>
+        <Note key={note.$id} note={note} setNotes={setNotes} />
       ))}
     </>
   );

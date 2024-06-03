@@ -5,12 +5,16 @@ import Notes from './pages/Notes';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Notes />} path="/" />
-        <Route element={<LoginRegister />} path="/login" />
-      </Routes>
-    </BrowserRouter>
+    <div id="app" data-theme="dark">
+      <div id="container">
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Notes />} path="/" />
+            <Route element={<LoginRegister />} path="/login" />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </div>
   );
 }
 
